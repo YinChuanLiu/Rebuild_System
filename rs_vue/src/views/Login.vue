@@ -93,7 +93,7 @@
   width: 520px;
   height: 365px;
   border: 1px transparent solid;
-  background: rgba(255,255,255,0.5);
+  background: rgba(255,255,255,0.35);
   padding-top: 10px;
 }
 .box-card{

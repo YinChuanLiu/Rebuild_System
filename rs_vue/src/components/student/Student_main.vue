@@ -6,12 +6,12 @@
       <el-breadcrumb-item>重修课程</el-breadcrumb-item>
     </el-breadcrumb>
     <el-card>
-      <el-table :data="tableData" max-height="580px">
+      <el-table :data="tableData" height="510px" max-height="510px" :header-cell-style="{'text-align':'center',color:'#67C23A'}" :cell-style="{'text-align':'center'}">
         <el-table-column prop="cname" label="课程名称">
         </el-table-column>
         <el-table-column prop="ctype" label="课程类别">
         </el-table-column>
-        <el-table-column prop="cyear" label="课程年限">
+        <el-table-column prop="cyear" label="学年学期">
         </el-table-column>
         <el-table-column prop="credit" label="学分">
         </el-table-column>
@@ -20,6 +20,8 @@
         <el-table-column prop="tell" label="电话">
         </el-table-column>
         <el-table-column prop="address" label="授课地点">
+        </el-table-column>
+        <el-table-column prop="ctime" label="授课时间">
         </el-table-column>
         <el-table-column prop="status" label="缴费状态">
         </el-table-column>
@@ -42,10 +44,12 @@
           teacher:'彭琛',
           tell:'12345678901',
           address:'4401',
+          ctime:'周一第一大节',
           status:'已缴费'
         };
         return {
-          tableData: Array(20).fill(item)
+          tableData: Array(20).fill(item),
+
         }
       }
     }

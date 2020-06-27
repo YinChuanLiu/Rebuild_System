@@ -1,13 +1,12 @@
 <template>
   <div id="student">
-    <router-link to="/Student_main"></router-link>
     <el-container>
       <el-header height="80px" style="text-align: right; font-size: 12px">
         <h1 class="header_title">重修信息系统</h1>
         <el-dropdown>
           <i class="el-icon-setting" style="margin-right: 15px; color: white"></i>
           <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item>退出登录</el-dropdown-item>
+            <el-dropdown-item @click.native="tologin" style="color: red">退出登录</el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>
         <span>王小虎</span>
@@ -21,7 +20,7 @@
             <el-menu-item index="Student_personal">
               <template slot="title"><i class="el-icon-menu"></i>个人信息</template>
             </el-menu-item>
-            <el-menu-item index="Revise_password">
+            <el-menu-item index="Revise_password1">
               <template slot="title"><i class="el-icon-setting"></i>修改密码</template>
             </el-menu-item>
           </el-menu>
@@ -39,16 +38,16 @@
     export default {
         name: "Student",
         methods:{
-
+          tologin(){
+            window.sessionStorage.removeItem('token');//可clear
+            this.$router.push('/');
+          }
         }
     }
 </script>
 
 <style scoped>
-  #student{
-    top: 0px;
-    left: 0px;
-  }
+
   .header_title{
     float: left;
     margin-top: -5px;
