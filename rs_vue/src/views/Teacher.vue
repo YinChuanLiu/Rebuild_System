@@ -1,6 +1,5 @@
 <template>
-    <div id="teacher">
-      <el-container>
+      <el-container class="home-container">
         <el-header height="80px" style="text-align: right; font-size: 12px">
           <h1 class="header_title">重修信息系统</h1>
           <el-dropdown>
@@ -12,7 +11,7 @@
           <span>王大虎</span>
         </el-header>
         <el-container>
-          <el-aside width="200px" style="background-color: #DCDFE6">
+          <el-aside width="200px">
             <el-menu class="el-menu-vertical-demo" default-active="Teacher_main" router>
               <el-menu-item index="Teacher_main">
                 <template slot="title"><i class="el-icon-message"></i>配置课程</template>
@@ -30,7 +29,6 @@
           </el-main>
         </el-container>
       </el-container>
-    </div>
 </template>
 
 <script>
@@ -46,7 +44,9 @@
 </script>
 
 <style scoped>
-
+  .home-container{
+    height: 100%;
+  }
   .header_title{
     float: left;
     margin-top: -5px;

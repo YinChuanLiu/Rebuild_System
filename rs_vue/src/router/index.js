@@ -3,12 +3,16 @@ import VueRouter from 'vue-router'
 import Login from '../views/Login'
 import Student from '../views/Student'
 import Teacher from '../views/Teacher'
+import Director from '../views/Director'
 import Revise_password1 from '../components/student/Revise_password1'
-import Revise_password2 from '../components/teacher/Revise_password2'
 import Student_main from '../components/student/Student_main'
 import Student_personal from '../components/student/Student_personal'
+import Revise_password2 from '../components/teacher/Revise_password2'
 import Teacher_main from '../components/teacher/Teacher_main'
 import Teacher_personal from '../components/teacher/Teacher_personal'
+import Revise_password3 from '../components/director/Revise_password3'
+import Director_main from '../components/director/Director_main'
+import Director_personal from '../components/director/Director_personal'
 
 Vue.use(VueRouter);
 
@@ -36,6 +40,17 @@ let routes = [
       {path:'/Teacher_main',component:Teacher_main,name:'课程分配'},
       {path:'/Teacher_personal',component:Teacher_personal,name:'个人信息'},
       {path:'/Revise_password2',component:Revise_password2,name:'修改密码2'}
+    ]
+  },
+  {
+    path:'/Director',
+    component:Director,
+    name:'教研室主任',
+    redirect:'/Director_main',
+    children:[
+      {path:'/Director_main',component:Director_main,name:'分配教师'},
+      {path:'/Director_personal',component:Director_personal,name:'个人信息'},
+      {path:'/Revise_password3',component:Revise_password3,name:'修改密码3'}
     ]
   }
 ];

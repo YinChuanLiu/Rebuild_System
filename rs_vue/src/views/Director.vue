@@ -1,25 +1,25 @@
 <template>
     <el-container class="home-container">
       <el-header height="80px" style="text-align: right; font-size: 12px">
-        <h1 class="header-title">重修信息系统</h1>
+        <h1 class="header_title">重修信息系统</h1>
         <el-dropdown>
           <i class="el-icon-setting" style="margin-right: 15px; color: white"></i>
           <el-dropdown-menu slot="dropdown">
             <el-dropdown-item @click.native="tologin" style="color: red">退出登录</el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>
-        <span>王小虎</span>
+        <span>王老虎</span>
       </el-header>
       <el-container>
         <el-aside width="200px">
-          <el-menu class="el-menu-vertical-demo" default-active="Student_main" router>
-            <el-menu-item index="Student_main">
-              <template slot="title"><i class="el-icon-message"></i>重修课程</template>
+          <el-menu class="el-menu-vertical-demo" default-active="Director_main" router>
+            <el-menu-item index="Director_main">
+              <template slot="title"><i class="el-icon-message"></i>分配课程</template>
             </el-menu-item>
-            <el-menu-item index="Student_personal">
+            <el-menu-item index="Director_personal">
               <template slot="title"><i class="el-icon-menu"></i>个人信息</template>
             </el-menu-item>
-            <el-menu-item index="Revise_password1">
+            <el-menu-item index="Revise_password3">
               <template slot="title"><i class="el-icon-setting"></i>修改密码</template>
             </el-menu-item>
           </el-menu>
@@ -32,15 +32,14 @@
 </template>
 
 <script>
-
     export default {
-        name: "Student",
-        methods:{
-          tologin(){
-            window.sessionStorage.removeItem('token');//可clear
-            this.$router.push('/');
-          }
-        }
+        name: "Director",
+            methods:{
+              tologin(){
+                window.sessionStorage.removeItem('token');//可clear
+                this.$router.push('/');
+              }
+            }
     }
 </script>
 
@@ -48,7 +47,7 @@
   .home-container{
     height: 100%;
   }
-  .header-title{
+  .header_title{
     float: left;
     margin-top: -5px;
 
@@ -60,13 +59,13 @@
   }
 
   .el-aside {
+    /*background-color: #DCDFE6;*/
     color: #333;
-    height: 100%;
   }
   .el-main {
     background-color: #E9EEF3;
     color: #333;
     text-align: center;
-    /*line-height: 160px;*/
   }
+
 </style>
