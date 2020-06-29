@@ -85,13 +85,6 @@
     export default {
         name: "Teacher_main",
         data() {
-          const item = {
-            cyear: '2019-02020-2',
-            cname: '软件工程',
-            ctype: '专业课',
-            address:'暂定',
-            ctime:'暂定'
-          };
           return {
             tableData: [
               {cyear: '2019-2020-2', cname: '软件工程', ctype: '专业课', address:'暂定', ctime:'暂定'},
@@ -144,8 +137,6 @@
         },
         //确定键点击事件，保存修改
         edittosave(){
-          // this.$set(this.tableData[0].address,this.editform.toaddress+'');
-          // this.$set(this.tableData[0].ctime,this.editform.toctime+'');
           this.tableData[this.indexid].address = this.editform.toaddress;
           this.tableData[this.indexid].ctime = this.editform.toctime;
           console.log(this.indexid);

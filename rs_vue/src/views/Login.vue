@@ -58,15 +58,20 @@
         onSubmit() {
           this.$refs.loginformref.validate(valid =>{
               if (!valid) return;
-            if(this.form.username=='123' & this.form.password=='123'){
+            if(this.form.username==='123' && this.form.password==='123'){
               window.sessionStorage.setItem("token",this.form.username);
               this.$router.push('/Student');
               this.$message.success('登录成功！');
-            }else if (this.form.username=='456' & this.form.password=='456'){
+            }else if (this.form.username==='456' && this.form.password==='456'){
               window.sessionStorage.setItem("token",this.form.username);
               this.$router.push('/Teacher');
               this.$message.success('登录成功！');
-            }else {
+            }else if (this.form.username==='789' && this.form.password==='789'){
+              window.sessionStorage.setItem("token",this.form.username);
+              this.$router.push('/Director');
+              this.$message.success('登录成功！');
+            }
+            else {
               this.$message.error('登录失败！');
             }
           });
