@@ -32,5 +32,10 @@ public class TestController {
 
     }
 
+    @RequestMapping("/errorpage")
+    public String toerror(){
+        return "errorpage";
+    }
+
 
 }

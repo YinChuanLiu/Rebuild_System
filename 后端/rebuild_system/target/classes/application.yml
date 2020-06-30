@@ -1,0 +1,49 @@
+
+spring:
+  thymeleaf:
+    # ģ�建�档
+    cache: false
+    # ʹ��alibaa��druid������Դ
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    username: root
+    password: 906478
+    url: jdbc:mysql://localhost:3306/rebuild_system?userSSL=true&userUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    druid:
+      initial-size: 5  # ��ʼ����С
+      min-idle: 5  # ��С
+      max-active: 50  # ���
+      max-wait: 60000  # ���û�ȡ���ӵȴ���ʱ��ʱ��
+      time-between-eviction-runs-millis: 60000  # ���ü����òŽ���һ�μ�⣬�����Ҫ�رյĿ������ӣ���λ�Ǻ���
+      min-evictable-idle-time-millis: 300000  # ָ��һ�������������ٿ��ж�ú�ɱ��������λ�Ǻ���
+      validationQuery: select 'x'
+      test-while-idle: true  # �����ӿ���ʱ���Ƿ�ִ�����Ӳ���
+      test-on-borrow: false  # �������ӳؽ�������ʱ���Ƿ���Ը�����
+      test-on-return: false  # �����ӹ黹�����ӳ�ʱ�Ƿ���Ը�����
+      filters: config,wall,stat  # ���ü��ͳ�����ص�filters��ȥ�����ؽ���sql�޷�ͳ�ƣ�'wall'���ڷ���ǽ
+      poolPreparedStatements: true # ��PSCache������ָ��ÿ��������PSCache�Ĵ�С
+      maxPoolPreparedStatementPerConnectionSize: 20
+      maxOpenPreparedStatements: 20
+      # ͨ��connectProperties��������mergeSql���ܣ���SQL��¼
+      connectionProperties: druid.stat.slowSqlMillis=200;druid.stat.logSlowSql=true;config.decrypt=false
+      # �ϲ����DruidDataSource�ļ������
+      #use-global-data-source-stat: true
+      #WebStatFilter���ã�˵����ο�Druid Wiki������_����WebStatFilter
+      web-stat-filter:
+        enabled: true #�Ƿ�����StatFilterĬ��ֵtrue
+        url-pattern: /*
+        exclusions: /druid/*,*.js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico
+        session-stat-enable: true
+        session-stat-max-count: 10
+        #StatViewServlet���ã�˵����ο�Druid Wiki������_StatViewServlet����
+      stat-view-servlet:
+        enabled: true #�Ƿ�����StatViewServletĬ��ֵtrue
+        url-pattern: /druid/*
+        reset-enable: true
+        login-username: admin
+        login-password: 123456
+# mybatis����
+mybatis:
+  type-aliases-package: top.yc9064.pojo
+  mapper-locations: classpath:mapper/*.xml
