@@ -12,7 +12,7 @@ public class StudentServiceImpl implements StudentService{
     StudentMapper studentMapper;
 
     @Override
-    public Student getStudentByID(Integer sid) {
+    public Student getStudentByID(String sid) {
         return studentMapper.getStudentByID(sid);
     }
 

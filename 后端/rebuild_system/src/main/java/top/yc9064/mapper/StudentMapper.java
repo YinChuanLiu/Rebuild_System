@@ -7,5 +7,5 @@ import top.yc9064.pojo.Student;
 @Repository
 @Mapper
 public interface StudentMapper {
-    Student getStudentByID(Integer sid);
+    Student getStudentByID(String sid);
 }

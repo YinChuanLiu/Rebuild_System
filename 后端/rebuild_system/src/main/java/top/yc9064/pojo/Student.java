@@ -2,15 +2,15 @@ package top.yc9064.pojo;
 
 
 public class Student {
-    private Integer sid;
+    private String sid;
     private String sname;
     private String pwd;
 
-    public Integer getSid() {
+    public String getSid() {
         return sid;
     }
 
-    public void setSid(Integer sid) {
+    public void setSid(String sid) {
         this.sid = sid;
     }
 
@@ -30,7 +30,7 @@ public class Student {
         this.pwd = pwd;
     }
 
-    public Student(Integer sid, String sname, String pwd) {
+    public Student(String sid, String sname, String pwd) {
         this.sid = sid;
         this.sname = sname;
         this.pwd = pwd;

@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class LoginController {
 
+
+
     @RequestMapping("/hello")
     public String hello(){
         return "hello";
@@ -34,13 +36,13 @@ public class LoginController {
         //执行登录的方法 没有异常则通过
         try {
             subject.login(token);
+            System.out.println("认证成功");
             return "1"; //认证成功
         }catch (UnknownAccountException e){//用户名异常
             System.out.println("用户名异常");
             return "0";
         }catch (IncorrectCredentialsException e){//密码不存
             System.out.println("密码不存zai");
-
             return "0";
         }
 

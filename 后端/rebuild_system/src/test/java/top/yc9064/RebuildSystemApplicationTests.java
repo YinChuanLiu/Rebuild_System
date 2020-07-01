@@ -14,7 +14,7 @@ class RebuildSystemApplicationTests {
     private StudentService studentService;
     @Test
     void contextLoads() {
-        Student studentByID = studentService.getStudentByID(20167058);
+        Student studentByID = studentService.getStudentByID("20167051");
         System.out.println(studentByID);
     }
 
