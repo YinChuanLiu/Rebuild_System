@@ -70,6 +70,10 @@
               window.sessionStorage.setItem("token",this.form.username);
               this.$router.push('/Director');
               this.$message.success('登录成功！');
+            }else if (this.form.username==='123456' && this.form.password==='123456'){
+              window.sessionStorage.setItem("token",this.form.username);
+              this.$router.push('/Manager');
+              this.$message.success('登录成功！');
             }
             else {
               this.$message.error('登录失败！');
@@ -88,9 +92,6 @@
   height: 100%;
   position: fixed;
   background-size: 100% 100%;
-  /*border: 1px red solid;*/
-  top: 0px;
-  left: 0px;
 }
 #form1{
   margin: auto;
