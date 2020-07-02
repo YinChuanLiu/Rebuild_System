@@ -3,7 +3,7 @@
       <!--    面包屑导航-->
       <el-breadcrumb separator-class="el-icon-arrow-right">
         <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-        <el-breadcrumb-item>配置课程</el-breadcrumb-item>
+        <el-breadcrumb-item>分配教师</el-breadcrumb-item>
       </el-breadcrumb>
       <el-card>
         <el-table :data="tableData" height="510px" max-height="510px" :header-cell-style="{'text-align':'center',color:'#67C23A'}" :cell-style="{'text-align':'center'}">

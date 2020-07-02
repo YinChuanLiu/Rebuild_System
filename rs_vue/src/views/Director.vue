@@ -14,7 +14,7 @@
         <el-aside width="200px">
           <el-menu class="el-menu-vertical-demo" default-active="Director_main" router>
             <el-menu-item index="Director_main">
-              <template slot="title"><i class="el-icon-message"></i>分配课程</template>
+              <template slot="title"><i class="el-icon-message"></i>分配教师</template>
             </el-menu-item>
             <el-menu-item index="Director_personal">
               <template slot="title"><i class="el-icon-menu"></i>个人信息</template>
@@ -59,7 +59,6 @@
   }
 
   .el-aside {
-    /*background-color: #DCDFE6;*/
     color: #333;
   }
   .el-main {
