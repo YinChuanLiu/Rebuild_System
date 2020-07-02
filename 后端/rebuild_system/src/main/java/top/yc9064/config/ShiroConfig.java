@@ -30,11 +30,22 @@ public class ShiroConfig {
 
         //访问student下的资源 必须登录
         map.put("/student/**","authc");
+
+
+
+        map.put("/teacher/**","authc");
+        map.put("/rootteacher/allotcourse","perms[director]");
+
+
+
+
         //map.put("/teacher/**","role[tea]");
         bean.setFilterChainDefinitionMap(map);
-
+        //设置没有登陆时访问资源 跳转到的登陆页面
         bean.setLoginUrl("/nopower");
 
+        //资源 已登陆用户访问未授权资源 要跳转的url
+        bean.setUnauthorizedUrl("/nopower");
         return bean;
     }
 

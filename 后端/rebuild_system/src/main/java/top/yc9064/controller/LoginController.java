@@ -31,11 +31,15 @@ public class LoginController {
     public String denglu(String username,String password){
         //获取当前用户
         Subject subject = SecurityUtils.getSubject();
+
+
         //封装 用户的登录数据
         UsernamePasswordToken token = new UsernamePasswordToken(username,password);
         //执行登录的方法 没有异常则通过
         try {
             subject.login(token);
+
+
             System.out.println("认证成功");
             return "1"; //认证成功
         }catch (UnknownAccountException e){//用户名异常
